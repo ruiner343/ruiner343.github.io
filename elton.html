@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        background-color: powderblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+        <!-- extra comment -->
+      <h1>Elton's personal website</h1>
+      <p>My name is Elton and I like stuff.</p>
+      <!-- https://codesandbox.io/live/qrg8d4w is the code sandbox -->
+      <!-- https://fh7l4.csb.app/elton.html is the actual website -->
+      <!-- https://www.w3schools.com/html/ is good for studying about HTML and other stuff -->
+      <script>
+        function calculator(){ 
+        var stringInput = document.getElementById("inputVal").value;
+        console.log("AAAA")
+        console.log(stringInput)
+        // Step 1: iterate through the string, make the string into a list 
+        let listOfCalculatorItems = stringInput.split("")
+        console.log(listOfCalculatorItems)
+
+        // Step 2: figure out what is the operator being inputted 
+        let operator = listOfCalculatorItems[1];
+        console.log(operator)
+
+        // Step 3: to "parse" the numbers into actual numbers 
+        let firstNumber = parseInt(listOfCalculatorItems[0]);
+        let secondNumber = parseInt(listOfCalculatorItems[2])
+
+        // Step4: bunch of if stateements depending on what the operator is:
+        let result; 
+        if (operator == "x") {
+          result = firstNumber * secondNumber;
+        } else if (operator == "/") {
+          result = firstNumber / secondNumber; 
+        } else if (operator == "+") { // addition 
+          result = firstNumber + secondNumber;
+        } else if (operator == "-") { // substration 
+          result = firstNumber - secondNumber;
+        }
+        document.getElementById("answer").innerHTML = result;
+      }
+      </script>
+
+      <h1> My Awesome Calculator</h1>
+      <input type="text" id="inputVal" name="inputVal"><br>
+      <input type="submit" value="Submit" onclick="calculator()">
+      <p>The answer is </p>
+      <h1>My Awesome Calculator!</h1>
+      <form>
+        <input type="text" id="inputVal" name="inputVal"><br>
+        <input type="submit" value="Submit">
+      </form>
+      <p>The answer is</p>
+      <p id="answer"></p>
+    </div>
+  </body>
+</html>
